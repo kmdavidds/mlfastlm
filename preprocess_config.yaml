@@ -1,0 +1,25 @@
+complexity_analysis:
+  use_edge_detection: true
+  use_entropy: true
+  use_text_detection: true
+
+resolution_tiers:
+  low: 336
+  medium: 512
+  high: 768
+  ultra: 1024
+
+thresholds:
+  low_complexity: 0.25
+  high_complexity: 0.6
+
+cropping:
+  enabled: true
+  min_margin: 10
+  max_crop_ratio: 0.4
+  background_threshold: null
+
+output:
+  save_visualizations: false
+  save_metrics: true
+  verbose: true

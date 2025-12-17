@@ -1,0 +1,30 @@
+Research Gap: Development Opportunities
+
+FastVLM does not yet have an adaptive-resolution mechanism that adjusts the input resolution based on the complexity of the image content.
+
+Although FastVLM analyzes the trade-off between static resolution and dynamic/tiling resolution, this paper does not provide a mechanism for adjusting the resolution based on the content or complexity of the image, as both only consider the aspect of image resolution as the basis for use.
+
+FastVLM always uses a fixed resolution, regardless of whether the image is simple or filled with small text. There is no method to decide when the resolution should be lowered, raised, or prioritized in certain areas.
+
+FastVLM does not yet have a content-aware cropping mechanism to remove uninformative areas of the image before encoding.
+
+Although FastVLM successfully reduces the number of visual tokens, the model still processes the entire image area, including empty or irrelevant parts (e.g., document margins, empty backgrounds, or areas without objects). As a result, many tokens are generated for useless areas, even though these tokens still increase the LLM context and add latency.
+
+The paper we read does not provide a mechanism for:
+detecting important areas (e.g., text, tables, objects),
+removing empty spaces,
+or focusing encoding on informative regions.
+
+Improvement: Innovations and Updates
+
+Adaptive-Resolution Preprocessing
+
+A new mechanism that automatically selects image resolution based on content complexity (e.g., text density, amount of detail, edge level).
+– Simple images: resolution is lowered (for faster processing and token savings)
+– Images full of small text/tables: resolution is increased (to maintain accuracy)
+
+Content‑Aware Cropping
+
+Removes empty areas or irrelevant parts before entering FastVLM to reduce the number of visual tokens and improve efficiency.
+
+Translated with DeepL.com (free version)

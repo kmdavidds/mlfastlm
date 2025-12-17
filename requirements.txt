@@ -1,0 +1,15 @@
+opencv-python
+numpy
+Pillow
+pyyaml
+# Optional (recommended for text detection):
+pytesseract
+# Optional (advanced image metrics):
+scikit-image
+# Plotting/analysis
+pandas
+matplotlib
+seaborn
+requests
+tqdm
+datasets
